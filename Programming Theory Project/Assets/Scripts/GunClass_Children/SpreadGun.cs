@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpreadGun : GunClass
 {
-    [SerializeField] private float spawnRange = 0.25f;
     [SerializeField] private int newBulletCount = 5;
 
     [SerializeField] private float angleMaximum = 45;
@@ -35,9 +34,9 @@ public class SpreadGun : GunClass
 
         for (int i = 0; i < shootNumber; i++)
         {
-            shootAngles[i] = -angleMax/2 + increment * (i + 1);
+            shootAngles[i] = -angleMax / 2 + increment * (i + 1);
         }
-        
+
         return shootAngles;
     }
 
