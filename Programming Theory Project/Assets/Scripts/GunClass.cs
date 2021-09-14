@@ -32,9 +32,9 @@ public class GunClass : MonoBehaviour
         for (int i = 0; i < number; i++)
         {
             if (i % 2 == 0)
-            { Instantiate(ammo, spawnPoint.transform.position + new Vector3(0, i/4, 0), ammo.transform.rotation); }
+            { Instantiate(ammo, spawnPoint.transform.position + new Vector3(0, i / 4, 0), ammo.transform.rotation); }
             else
-            { Instantiate(ammo, spawnPoint.transform.position - new Vector3(0, i/4, 0), ammo.transform.rotation); }
+            { Instantiate(ammo, spawnPoint.transform.position - new Vector3(0, i / 4, 0), ammo.transform.rotation); }
         }
     }
 

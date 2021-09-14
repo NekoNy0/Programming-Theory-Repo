@@ -9,6 +9,6 @@ public class MoveRight : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        gameObject.transform.localPosition += gameObject.transform.TransformDirection(speed, 0 ,0);
+        gameObject.transform.localPosition += gameObject.transform.TransformDirection(speed, 0, 0);
     }
 }
