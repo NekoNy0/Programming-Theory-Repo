@@ -11,21 +11,33 @@ public class GunClass : MonoBehaviour
     [SerializeField] protected GameObject ammo;
     [SerializeField] protected GameObject spawnPoint;
 
-    protected int bulletCount;
+    // ENCAPSULATION
+    private int e_bulletCount;
+    protected int bulletCount
+    {
+        get { return e_bulletCount; }
+        set
+        {
+            if (value >= 0) { e_bulletCount = value; } else { e_bulletCount = Mathf.Abs(value); }
+        }
+    }
 
+    // ABSTRACTION
     private void OnMouseDown()
     {
-        if (bulletCount > 1)
-        { ShootingMethod(bulletCount); }
+        if (e_bulletCount > 1)
+        { ShootingMethod(e_bulletCount); }
         else { ShootingMethod(); }
     }
 
+    // ABSTRACTED METHOD
     protected virtual void ShootingMethod()
     {
         // spawning one preFab ammo directed right
         Instantiate(ammo, spawnPoint.transform.position, ammo.transform.rotation);
     }
 
+    // ABSTRACTED METHOD
     protected virtual void ShootingMethod(int number)
     {
         // spawning many preFabs ammos directed right

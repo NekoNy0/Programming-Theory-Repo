@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class SpreadGun : GunClass
 {
     [SerializeField] private int newBulletCount = 5;
@@ -13,10 +14,12 @@ public class SpreadGun : GunClass
         bulletCount = newBulletCount;
     }
 
+    // POLYMORPHISM
     protected override void ShootingMethod(int number)
     {
         // spawning many preFabs ammos directed right
 
+        // ABSTRACTION
         float[] ar_shootAngles = ShootAngles(bulletCount, angleMaximum);
 
         for (int i = 0; i < number; i++)
@@ -25,7 +28,7 @@ public class SpreadGun : GunClass
         }
     }
 
-
+    // ABSTRACTED METHOD
     private float[] ShootAngles(int shootNumber, float angleMax)
     {
         float[] shootAngles = new float[shootNumber];
